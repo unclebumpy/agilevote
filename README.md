@@ -1,2 +1,2 @@
 # AgileVote
-Source for our internal agile point sizing app.
+Point sizing made strange.
