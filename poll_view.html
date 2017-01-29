@@ -1,0 +1,38 @@
+<!-- here is the view 4 you -->
+<div layout="column">
+	<div>
+		<md-content layout="column" class="md-display-1">
+	        <div>
+		        <md-select placeholder="Name" ng-model="youare" ng-change="youare=='new' ? shownewuser=true : shownewuser=false">
+					<md-option ng-repeat="voter in voters" value="{{voter.name}}">{{voter.name}}</md-option>
+					<md-option value="new">New User</md-option>
+				</md-select>
+			</div>
+			<div>
+				<div layout="row">
+					<div>
+						<md-input-container ng-show="shownewuser">
+					        <label>Your name is?</label>
+					        <input ng-show="shownewuser" ng-model="newusername">
+				        </md-input-container>
+			        </div>
+			        <div>
+				        <i title="Add yo'self foo!" ng-click="addnewvoter();shownewuser=false;" ng-show="newusername" class="fa fa-user-plus"></i> <i title="Don't add yourself..." ng-show="newusername" ng-click="shownewuser=false;newusername='';youare=''" class="fa fa-times" style="vertical-align: bottom;"></i>
+			        </div>
+		        </div>
+			</div>
+		</md-content>
+	</div>
+	<div>
+		<!-- the table of point options - click to vote -->
+		<md-list-item ng-repeat="value in pointValues" ng-mouseenter="focusedvote=true" ng-mouseleave="focusedvote=false" ng-class="{focusedvotebg: focusedvote};">
+			<p ng-click="guessinggame(value.points,'High')">{{value.points}}</p><p ng-click="guessinggame(value.points,'High')">{{value.hours}}</p><p ng-click="guessinggame(value.points,'High')">{{value.size}}</p>
+			<p>
+				<span ng-show="value.points==yourvote.points" style="font-size: 150%;">
+				<i id="low" title="Low Confidence" class="fa ng-class: {'fa-check-circle-o':yourvote.confidence!='Low','fa-check-circle':yourvote.confidence=='Low'};" style="color: red;" ng-click="guessinggame(value.points,'Low')"></i>  <i id="medium" title="Medium Confidence" class="fa ng-class: {'fa-check-circle-o':yourvote.confidence!='Medium','fa-check-circle':yourvote.confidence=='Medium'};" style="color: orange;" ng-click="guessinggame(value.points,'Medium')"></i>  <i id="high" title="High Confidence" class="fa ng-class: {'fa-check-circle-o':yourvote.confidence!='High','fa-check-circle':yourvote.confidence=='High'};" style="color: green;" ng-click="guessinggame(value.points,'High')"></i>
+				</span>
+			</p>
+			<md-divider ng-if="!$last"></md-divider>
+		</md-list-item>
+	</div>
+</div>

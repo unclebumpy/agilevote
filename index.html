@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="agilePollApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgilePoll | Let the Games Begin</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="css/html5boilerplate_main.css">
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Nosifer|Ubuntu+Mono|Monofett|Faster+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/app.css?v=1">
+  <script type="text/javascript" src="js/modernizr_dev.js"></script>
+  <script type="text/javascript" src="//d3eyf2cx8mbems.cloudfront.net/js/loggly.tracker.js" async></script>
+  <script>
+      var _LTracker = _LTracker || [];
+      _LTracker.push({'logglyKey': '28ac78e5-cdbb-491c-9bf7-cc74c59bd53e' });
+  </script>
+</head>
+<body>
+<div layout="row">
+  <div flex="20">
+    <!-- margin -->
+  </div>
+  <div flex="60">
+    <!-- main column -->
+      <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div layout="column">
+      <h1 class="md-display-2 agilelogo">AgileVote</h1>
+      <!--<span class="md-subhead">Let the games begin!</span>-->
+    </div>
+
+    <div>
+      <div ng-view></div>
+    </div>
+  </div>
+  </div>
+  <div flex="20">
+    <!-- margin -->
+  </div>
+  <!--<ul class="menu">
+    <li><a href="#/poll">Point Sizing</a></li>
+    <li><a href="#/admin">Scrum Mastering</a></li>
+  </ul>-->
+
+</div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-aria.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+  <script src="//cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+  <script src="js/angularfire.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/app.js?v=1"></script>
+</body>
+</html>

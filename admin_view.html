@@ -1,0 +1,18 @@
+<!-- page for the scrum master -->
+<div layout="column">
+	<div>
+		<div ng-show="leaderingly"><span class="md-display-1">Popular: </span>
+		<i ng-hide="bigReveal" class="fa fa-question-circle" style="font-size: 200%;"></i><span ng-show="bigReveal" class="md-display-1">{{leaderingly.most}}</span></div><!--Min {{leaderingly.min}}, Max {{leaderingly.max}}, Popular {{leaderingly.most}}-->
+	</div>
+	<div>
+		<p>You are in charge. Don't get carried away!</p>
+	</div>
+	<div> <!--ng-show="votes.vote>4" ng-show="bigReveal"-->
+		<md-list-item ng-repeat="votes in currentVotes | orderBy:votes.vote" class="md-whiteframe-z4" style="margin-bottom:10px; padding-left: 5px;" ng-mouseenter="focusedvote=true" ng-mouseleave="focusedvote=false" ng-class="{focusedvotebg: focusedvote};">
+			<p>{{votes.name}}</p><p><span ng-show="bigReveal">{{votes.vote}} [{{sizingTable[votes.vote].hours}} hours]</span><i ng-hide="bigReveal" class="fa fa-question-circle" style="font-size: 150%;"></i></p><p ng-class="confstyle(votes.confidence)">{{votes.confidence}}</p><p><span style="color:pink; cursor: pointer; font-size: 150%;"><i title="Send some love!" ng-click="showvotesandstuff.encourage(votes.$id,'love')" class="fa fa-heart"></i> <i title="Send some encouragement!" ng-click="showvotesandstuff.encourage(votes.$id,'encouragement')" class="fa fa-beer"></i> <i title="Send some extreme motivation!" class="fa fa-tachometer" ng-click="showvotesandstuff.encourage(votes.$id,'shia')"></i></span></p>
+		</md-list-item>
+	</div>
+	<div>
+		<md-button class="md-raised md-primary" ng-click="bigReveal=!bigReveal"><span ng-show="bigReveal">Hide Votes</span><span ng-hide="bigReveal">Show Votes</span></md-button> <md-button class="md-raised md-primary" ng-click="resetVoting()">New Story</md-button>
+	</div>
+</div>
